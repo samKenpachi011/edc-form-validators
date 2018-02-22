@@ -1,0 +1,2 @@
+Django
+-e git+https://github.com/clinicedc/edc-constants.git@develop#egg=edc_constants

@@ -53,6 +53,7 @@ class RequiredFieldValidator(BaseFormValidator):
                 f'The required field cannot be None.')
         if self.cleaned_data and field_required in self.cleaned_data:
             if (condition and (not self.cleaned_data.get(field_required)
+                               and (not self.cleaned_data.get(field_required) == 0)
                                or self.cleaned_data.get(field_required) == NOT_APPLICABLE)):
                 message = {
                     field_required: required_msg or 'This field is required.'}
