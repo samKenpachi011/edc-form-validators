@@ -243,6 +243,31 @@ class TestRequiredFieldValidator2(TestCase):
         except forms.ValidationError:
             self.fail('ValidationError unexpectedly raised')
 
+class TestRequiredFieldValidator3(TestCase):
+    """Test required_if_true().
+    """
+
+    def test_required_field_true_value_none(self):
+        form_validator = FormValidator(
+            cleaned_data=dict(field_one=None))
+        condition = True
+        self.assertRaises(
+            forms.ValidationError,
+            form_validator.required_if_true,
+            condition=condition,
+            field_required='field_one')
+
+    def test_required_field_true_value_ok(self):
+        form_validator = FormValidator(
+            cleaned_data=dict(field_one=1))
+        condition = True
+        try:
+            form_validator.required_if_true(
+                condition=condition,
+                field_required='field_one')
+        except forms.ValidationError as e:
+            self.fail(f'forms.ValidationError unexpectedly raised. Got {e}')
+
 
 class TestApplicableFieldValidator(TestCase):
     """Test applicable_if().
