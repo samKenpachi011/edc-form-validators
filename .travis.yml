@@ -1,0 +1,26 @@
+os: linux
+dist: focal
+language: python
+
+python:
+  - "3.7"
+  - "3.8"
+  - "3.9"
+
+install:
+  - pip install --upgrade pip
+  - pip install -r requirements.txt
+  - pip install flake8
+  - pip install flake8-per-file-ignores
+  - pip install coveralls
+
+before_script:
+  - flake8 edc-form-validators
+
+script:
+  - python manage.py check
+  # - python manage.py test
+  - coverage run --source=edc_label manage.py test
+
+after_success:
+  - coveralls
