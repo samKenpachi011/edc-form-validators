@@ -15,11 +15,10 @@ install:
   - pip install coveralls
 
 before_script:
-  - flake8 edc-form-validators
+  - flake8 edc_form_validators
 
 script:
   - python manage.py check
-  # - python manage.py test
   - coverage run --source=edc-form-validators manage.py test
 
 after_success:
