@@ -2,6 +2,8 @@
 [flake8]
 max-line-length = 110
 
+ignore = W503
+
 exclude =
   __pycache__,
   settings.py,

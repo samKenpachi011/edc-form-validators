@@ -15,18 +15,14 @@ class SimpleYesNoValidationMixin:
 
     def require_if_yes(self, yesno_field, required_field,
                        required_msg=None, not_required_msg=None):
-        if (self.cleaned_data.get(yesno_field) in [NO, UNKNOWN]
-                and self.cleaned_data.get(required_field)):
+        if (self.cleaned_data.get(yesno_field) in [NO, UNKNOWN] and self.cleaned_data.get(required_field)):
             raise forms.ValidationError({
                 required_field: [
-                    not_required_msg
-                    or 'This field is not required based on previous answer.']})
-        elif (self.cleaned_data.get(yesno_field) == YES
-              and not self.cleaned_data.get(required_field)):
+                    not_required_msg or 'This field is not required based on previous answer.']})
+        elif (self.cleaned_data.get(yesno_field) == YES and not self.cleaned_data.get(required_field)):
             raise forms.ValidationError({
                 required_field: [
-                    required_msg
-                    or 'This field is required based on previous answer.']})
+                    required_msg or 'This field is required based on previous answer.']})
 
 
 class SimpleApplicableByAgeValidatorMixin:

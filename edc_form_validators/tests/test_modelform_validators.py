@@ -288,8 +288,7 @@ class TestApplicableFieldValidator(TestCase):
         are YES.
         """
         form_validator = FormValidator(
-            cleaned_data=dict(field_one=('test_con1' == YES and
-                                         'test_con2' == YES),
+            cleaned_data=dict(field_one=('test_con1' == YES and 'test_con2' == YES),
                               field_two=NOT_APPLICABLE))
         self.assertRaises(
             forms.ValidationError,
