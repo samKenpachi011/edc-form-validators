@@ -1,7 +1,6 @@
 [![Build Status](https://app.travis-ci.com/samKenpachi011/edc-form-validators.svg?branch=develop)](https://app.travis-ci.com/samKenpachi011/edc-form-validators)
 
 [![Coverage Status](https://coveralls.io/repos/github/EDC-Upgrade/edc-form-validators/badge.svg?branch=develop)](https://coveralls.io/github/EDC-Upgrade/edc-form-validators?branch=develop)
-
 [![Language](https://img.shields.io/badge/Language-Python-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)](https://github.com/samKenpachi011/edc-form-validators/releases/tag/v1.0.0)
